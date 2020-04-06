@@ -9,7 +9,7 @@ MQTT_Broker = "localhost"
 MQTT_Port = 1883 
 Keep_Alive_Interval = 45 
 MQTT_Topic_Humidity = "Home/Humidity" 
-MQTT_Topic_Temperature = "Home/Temperature"
+MQTT_Topic_Temperature = "Temperature"
 
 mqttc = mqtt.Client() 
 mqttc.connect(MQTT_Broker, int(MQTT_Port),int(Keep_Alive_Interval))
