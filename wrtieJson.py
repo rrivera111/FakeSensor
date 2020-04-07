@@ -2,6 +2,7 @@ import json
 import RPi.GPIO as GPIO
 from openhab import openHAB
 import random, threading, json
+from time import sleep
 ## Virtual switch definition 
 base_url =  'http://localhost:8080/rest'
 openhab = openHAB(base_url)
@@ -41,6 +42,7 @@ def inputVirtual(virtualSwitch):
     return val 
 
 while True : 
+    global switch1Vritual
     value1 = inputs(13)
     value2 = inputs(26)
     value3 = inputVirtual(switch1Vritual)
@@ -52,3 +54,4 @@ while True :
     settings = json.dumps(settings)
     with open('settings.json','w') as json_file:
         json.dump(settings,json_file)
+    sleep(1)
