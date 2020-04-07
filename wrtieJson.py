@@ -1,6 +1,6 @@
 import json
 import RPi.GPIO as GPIO
-
+from openhab import openHAB
 ## Virtual switch definition 
 base_url =  'http://localhost:8080/rest'
 openhab = openHAB(base_url)
