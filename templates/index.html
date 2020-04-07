@@ -1,0 +1,68 @@
+
+<html>
+<head> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<script>
+window.setInterval((function(){
+    $.ajax({
+        url: '/suggestions',
+        type: 'GET',
+        success: function(response) {
+            console.log(response);
+            $("#num").html(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+}),1500);
+ 
+</script>
+<h1>Sensor values </h1>
+<h2 id="num"></h2>
+
+</body>
+</head>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Suggestions</title>
+</head>
+
+<body>
+
+Search: <h2>{{ suggestions }}<h2>
+  <p>Status of UPS: {{ suggestions }}</p>
+<div id="place_for_suggestions"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+$("#search_form_input").keyup(function(){
+    var text = $(this).val();
+
+    $.ajax({
+      url: "/suggestions",
+      type: "get",
+      data: {jsdata: text},
+      success: function(response) {
+        $("#place_for_suggestions").html(response);
+      },
+      error: function(xhr) {
+        //Do Something to handle error
+      }
+    });
+});
+</script>
+
+</body>
+
+</html>
+-->
