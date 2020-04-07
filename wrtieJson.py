@@ -23,9 +23,9 @@ GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 #    'x4':1 # winter time
 #}
 
-def inputs(gpio1):
-    in1 = GPIO.input(gpio1)
-    if in1 = 1 :
+def inputs(pin1):
+    input1 = GPIO.input(pin1)
+    if input1 == 1 :
         val = 1 
     else :
         val = 0
@@ -33,7 +33,7 @@ def inputs(gpio1):
 
 def inputVirtual(virtualSwitch):
     input = virtualSwitch
-    if input = "ON" :
+    if input == "ON" :
         val = 1 
     else :
         val = 0
