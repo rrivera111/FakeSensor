@@ -4,11 +4,11 @@ from openhab import openHAB
 import random, threading, json
 from time import sleep
 ## Virtual switch definition 
-base_url =  'http://localhost:8080/rest'
-openhab = openHAB(base_url)
-items=openhab.fetch_all_items()
-switch1Vritual = items.get('channel4') 
-switch1Vritual = switch1Vritual.state
+#base_url =  'http://localhost:8080/rest'
+#openhab = openHAB(base_url)
+#items=openhab.fetch_all_items()
+#switch1Vritual = items.get('channel4') 
+#switch1Vritual = switch1Vritual.state
 
 ## GPIO Read outs 
 GPIO.setmode(GPIO.BCM)
@@ -42,7 +42,12 @@ def inputVirtual(virtualSwitch):
     return val 
 
 while True : 
-    global switch1Vritual
+    base_url =  'http://localhost:8080/rest'
+    openhab = openHAB(base_url)
+    items=openhab.fetch_all_items()
+    switch1Vritual = items.get('channel4') 
+    switch1Vritual = switch1Vritual.state
+    #global switch1Vritual
     value1 = inputs(13)
     value2 = inputs(26)
     value3 = inputVirtual(switch1Vritual)
