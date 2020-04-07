@@ -15,6 +15,6 @@ def readSettings ():
 
 read = readSettings() 
 
-print rread 
+print read 
 
 
