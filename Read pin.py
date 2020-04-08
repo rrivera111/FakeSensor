@@ -47,4 +47,5 @@ while True :
     value2 = GPIO.input(26)#inputs(26)
     print (value1)
     print (value2)
+    sleep(1)
 
