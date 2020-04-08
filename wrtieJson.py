@@ -51,12 +51,21 @@ while True :
     value1 = inputs(13)
     value2 = inputs(26)
     value3 = inputVirtual(switch1Vritual)
-    settings = {} 
-    settings['deltaT'] = 10
-    settings['x1'] = value1
-    settings['x2'] = value1
-    settings['x3'] = value3
-    settings = json.dumps(settings)
+    #settings = {} 
+    #settings['deltaT'] = 10
+    #settings['x1'] = value1
+    #settings['x2'] = value1
+    #settings['x3'] = value3
+    #settings = json.dumps(settings)
+
+    settings = {
+    #'setpoint1': 21,
+    #'setpoint2':31,
+    'deltaT':10,
+    'x1':value1, # heating on
+    'x2':value2, # warm water
+    'x3':value3, # sommer timme
+    }
     with open('settings.json','w') as json_file:
         json.dump(settings,json_file)
     sleep(1)
