@@ -7,7 +7,7 @@ import sys
 import RPi.GPIO as GPIO
 # GPIO definitions
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
+# GPIO.setwarnings(False)
 # relays definition 
 RelayList = [23,22,4,27,12,17,18,20]
 # GPIO pins defined as ouputs
@@ -33,8 +33,13 @@ class Relay:
         GPIO.output(IN,GPIO.HIGH)
 
 if __name__ == '__main__':
-    #Relay.ON(23)
+    #Relay.OFF(23)
     test = Relay()
-    test.ON(23)
+    test.OFF(23)
+    test.ON(22)
+    test.ON(4)
+    time.sleep(1)	
+    GPIO.cleanup()
+    #test.OFF(23)
     #pass
 
