@@ -33,6 +33,8 @@ class Relay:
         GPIO.output(IN,GPIO.HIGH)
 
 if __name__ == '__main__':
-    ON(23)
+    Relay.ON(23)
+    test = Relay()
+    test.ON(23)
     #pass
 
