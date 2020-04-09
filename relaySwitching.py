@@ -6,20 +6,20 @@ import sys
 # GPIO Library
 import RPi.GPIO as GPIO
 # GPIO definitions
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 # relays definition 
-#RelayList = [23,22,4,27,12,17,18,20]
+RelayList = [23,22,4,27,12,17,18,20]
 # GPIO pins defined as ouputs
-#GPIO.setup(RelayList, GPIO.OUT)
+GPIO.setup(RelayList, GPIO.OUT)
 class Relay: 
     def __init__(self):
         #self.GPIO = GPIO 
-        self.GPIO.setmode(GPIO.BCM)
-        self.GPIO.setwarnings(False)
-        RelayList = [23,22,4,27,12,17,18,20]
-        self.GPIO.setup(RelayList,GPIO.OUT)
-        print("Init print")
+        #self.GPIO.setmode(GPIO.BCM)
+        #self.GPIO.setwarnings(False)
+        #RelayList = [23,22,4,27,12,17,18,20]
+        #self.GPIO.setup(RelayList,GPIO.OUT)
+        #print("Init print")
         #self.inputPin = inputPin
         #GPIO.setup(self.inputPin,GPIO.OUT)
         #GPIO.output(self.inputPin,GPIO.LOW)
