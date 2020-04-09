@@ -24,10 +24,10 @@ class Relay:
 if __name__ == '__main__':
     #Relay.OFF(23)
     testRelay = Relay()
-    for i in len(RelayList) : 
+    for i in RelayList : 
         testRelay.ON(RelayList[i])
         time.sleep(.5)
-    for i in len(RelayList) : 
+    for i in RelayList : 
         testRelay.OFF(RelayList[i])
         time.sleep(.5)
 
