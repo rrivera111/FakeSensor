@@ -22,13 +22,16 @@ class Relay:
         GPIO.output(IN,GPIO.HIGH)
         GPIO.cleanup()
 if __name__ == '__main__':
+    print(len(RelayList))
     #Relay.OFF(23)
-    testRelay = Relay()
-    for i in RelayList : 
-        testRelay.ON(RelayList[i])
-        time.sleep(.5)
-    for i in RelayList : 
-        testRelay.OFF(RelayList[i])
-        time.sleep(.5)
+    #testRelay = Relay()
+    #for i in RelayList :
+
+         print(RelayList[i])
+    #    testRelay.ON(RelayList[i])
+    #    time.sleep(.5)
+    #for i in RelayList : 
+    #    testRelay.OFF(RelayList[i])
+    #    time.sleep(.5)
 
     time.sleep(1)
