@@ -14,32 +14,21 @@ RelayList = [23,22,4,27,12,17,18,20]
 GPIO.setup(RelayList, GPIO.OUT)
 class Relay: 
     def __init__(self):
-        #self.GPIO = GPIO 
-        #self.GPIO.setmode(GPIO.BCM)
-        #self.GPIO.setwarnings(False)
-        #RelayList = [23,22,4,27,12,17,18,20]
-        #self.GPIO.setup(RelayList,GPIO.OUT)
-        #print("Init print")
-        #self.inputPin = inputPin
-        #GPIO.setup(self.inputPin,GPIO.OUT)
-        #GPIO.output(self.inputPin,GPIO.LOW)
         pass
     def ON(self,IN) :
         GPIO.output(IN,GPIO.LOW)
-        #GPIO.output(IN,GPIO.LOW)
-        #time.sleep(1)
-        print("relay ON on pin "  )
+        GPIO.cleanup()
     def OFF(self,IN):
         GPIO.output(IN,GPIO.HIGH)
-
+        GPIO.cleanup()
 if __name__ == '__main__':
     #Relay.OFF(23)
-    test = Relay()
-    test.OFF(23)
-    test.ON(22)
-    test.ON(4)
-    time.sleep(1)	
-    GPIO.cleanup()
-    #test.OFF(23)
-    #pass
+    testRelay = Relay()
+    for i in RelayList : 
+        testRelay.ON(RelayList[i])
+        time.sleep(.5)
+    for i in RelayList : 
+        testRelay.OFF(RelayList[i])
+        time.sleep(.5)
 
+    time.sleep(1)
