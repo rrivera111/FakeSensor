@@ -1,4 +1,5 @@
-# Main heating functions for Dietmars Heating plant 
+#!/usr/bin/env python3
+# heating functions for Dietmars Heating plant 
 from openhab import openHAB
 import time 
 import os
@@ -7,6 +8,7 @@ import datetime
 import RPi.GPIO as GPIO
 import time
 import sys 
+# library for relay definition 
 import relaySwitching
 Rel1 = 23 #y1
 Rel2 = 22 #y2

@@ -1,21 +1,20 @@
+#!/usr/bin/env python3
 # Rev 0 - Function for reading PT 1000 and trigger logic 
-
+# Import general libraries
 import time
-import heatingFunctions
 import json
 from statistics import mean
 from datetime import datetime
 from datetime import date
 #from datetime import time
 from datetime import timedelta
+# imports heating functions 
+import heatingFunctions
 import board
 import busio
 import digitalio
 import adafruit_max31865
-#spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
-#cs = digitalio.DigitalInOut(board.D6)  # Chip select of the MAX31865 board.
-#sensor = adafruit_max31865.MAX31865(spi, cs)
-#sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=1000, ref_resistor=4300, wires=2)
+
 counter = 0 
 temp_avg = []
 start = datetime.now()
@@ -57,13 +56,13 @@ class pt1000 :
     def readSettings (self):
         with open('settings.json') as f:
             data = json.load(f)
-            setpoint1 = data['setpoint1']
-            setpoint2 = data['setpoint2']
-            deltaT    = data['deltaT']
+            #setpoint1 = data['setpoint1']
+            #setpoint2 = data['setpoint2']
+            #deltaT    = data['deltaT']
+            delta = data['deltaT']
             x1 = data['x1']
             x2 = data['x2']
             x3 = data['x3']
-            x4 = data['x4']
         return(setpoint1,setpoint2,deltaT,x1,x2,x3,x4)
 # PT100 1 definition , DI 5 wires 2  
 T1_1 = pt1000(5,2)
@@ -84,5 +83,7 @@ while True :
     print("Temperature T1 : " + str(T1))		
     T2 = T2_1.tempreading()
     print("Temperature T2 : " + str(T2))
-    heati = heating.function1(x1,x3,x2,x4,T1,T2,setpoint1,setpoint2,deltaT)
+    heating.function1(x1,x3,x2,x4,T1,T2,setpoint1,setpoint2,deltaT)
     time.sleep(.5)
+
+
