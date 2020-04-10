@@ -26,7 +26,7 @@ def publish_To_Topic(topic, message):
 	mqttc.publish(topic,message)
 
 # Gathers sensor data and publush to defined topics 
-def publish_Fake_Sensor_Values_to_MQTT(): 
+def publish_Sensor_Values_to_MQTT(): 
 	#threading.Timer(3.0, publish_Fake_Sensor_Values_to_MQTT).start()
 	global toggle
 	if toggle == 0:
@@ -44,7 +44,9 @@ def publish_Fake_Sensor_Values_to_MQTT():
 		toggle = 0
 
 while True : 
-	publish_Fake_Sensor_Values_to_MQTT()
+	sensor1 = max_reader.tempreading1()
+	sensor2 = max_reader.tempreading2()
+	publish_Sensor_Values_to_MQTT()
 	time.sleep(.5)
 
 
