@@ -43,6 +43,7 @@ def inputVirtual(virtualSwitch):
     return val 
 
 try: 
+#sleep(1)
     while True : 
         base_url =  'http://localhost:8080/rest'
         openhab = openHAB(base_url)
@@ -68,6 +69,7 @@ try:
             'x3':value3, # sommer timme
             'x4':value3, # 
             }
+        sleep(1)
         with open('settings.json','w') as json_file:
             json.dump(settings,json_file)
             sleep(1)
