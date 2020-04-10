@@ -11,10 +11,14 @@ GPIO.setmode(GPIO.BCM)
 # relays definition 
 #RelayList = [23,22,4,27,12,17,18,20]
 RelayList = [5, 6, 13, 16, 19, 20, 21, 26] # Original distribution board
-
+#Rel1 = 23 #y1
+#Rel2 = 22 #y2
+#Rel3 = 4  #y3
+#Rel4 = 27 #y4
 class Relay:
 	def __init__(self,  invert=True, init=False ) :
-		self._pin = [5, 6, 13, 16, 19, 20, 21, 26]
+		#self._pin = [5, 6, 13, 16, 19, 20, 21, 26]
+		self._pin = [23,22,4,27]
 		self.inverted = invert
 		self.state = init
 		GPIO.setup(self._pin, GPIO.OUT,initial=init^invert) 
