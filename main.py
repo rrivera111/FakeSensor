@@ -96,14 +96,14 @@ def publish_Sensor_Values_to_MQTT():
 	threading.Timer(3.0, publish_Sensor_Values_to_MQTT).start()
 	global toggle
 	if toggle == 0:
-		valueSensor1 = sensor1      
+		valueSensor1 = str(sensor1)      
 		#valueSensor1 = float("{0:.2f}".format(sensor1))
 		#valueSensor1_Data = {}
 		#valueSensor1_json_data = json.dumps(valueSensor1_Data)
 		publish_To_Topic (MQTT_Topic_Boiler, valueSensor1)
 		toggle = 1
 	else:
-		valueSensor2 = sensor2        
+		valueSensor2 = str(sensor2)       
 		#valueSensor2 = float("{0:.2f}".format(sensor2))
 		#valueSensor2_Data = {}
 		#valueSensor2_json_data = json.dumps(valueSensor2_Data)
