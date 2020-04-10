@@ -23,7 +23,7 @@ class relay:
 		GPIO.output(pin,self.state^self.inverted) 
 	def OFF(self,pin):
 		self.state = bool(False)
-		GPIO.output(pin._pin,self.state^self.inverted) 
+		GPIO.output(pin,self.state^self.inverted) 
 
 if __name__ == '__main__':
 	try : 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
 			testRelay = relay()
 			testRelay.ON(RelayList[i])
 			time.sleep(0.5)
-			testRelay.off()
+			testRelay.OFF(RelayList[i])
 			print('Relay off')
 			time.sleep(0.5)
 		GPIO.cleanup()
