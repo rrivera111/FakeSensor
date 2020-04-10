@@ -66,6 +66,7 @@ while True :
     'x1':value1, # heating on
     'x2':value2, # warm water
     'x3':value3, # sommer timme
+    'x4':value3, # 
     }
     with open('settings.json','w') as json_file:
         json.dump(settings,json_file)
