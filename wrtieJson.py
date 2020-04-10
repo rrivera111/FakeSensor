@@ -43,13 +43,14 @@ def inputVirtual(virtualSwitch):
     return val 
 
 try: 
-#sleep(1)
-    while True : 
+while True : 
         base_url =  'http://localhost:8080/rest'
         openhab = openHAB(base_url)
         items=openhab.fetch_all_items()
         switch1Vritual = items.get('channel4') 
         switch1Vritual = switch1Vritual.state
+    try:
+
         #global switch1Vritual
         value1 = inputs(13)
         value2 = inputs(26)
@@ -70,10 +71,10 @@ try:
             'x4':value3, # 
             }
         sleep(1)
-        with open('settings.json','w') as json_file:
-            json.dump(settings,json_file)
-            sleep(1)
-
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    print("Interrupted!")
+    
+     except KeyboardInterrupt:
+         GPIO.cleanup()
+         print("Interrupted!")
+    with open('settings.json','w') as json_file:
+        json.dump(settings,json_file)
+        sleep(1)
