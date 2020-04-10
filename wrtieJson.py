@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import json
 import RPi.GPIO as GPIO
 from openhab import openHAB
@@ -59,8 +60,8 @@ while True :
     #settings = json.dumps(settings)
 
     settings = {
-    #'setpoint1': 21,
-    #'setpoint2':31,
+    'setpoint1': 21,
+    'setpoint2':31,
     'deltaT':10,
     'x1':value1, # heating on
     'x2':value2, # warm water

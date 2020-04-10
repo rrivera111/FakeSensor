@@ -31,6 +31,7 @@ class heating :
         items=openhab.fetch_all_items()
         self.temp = items.get('Temperature')
         self.set_point = items.get('Setpoint')
+        self.relay = relaySwitching.Relay()
     def function1 (self,x1,x3,x2,x4,T1,T2,setpoint1, setpoint2,delta1):
         # condition1 , out = y3
         #setpoint1 = 40
