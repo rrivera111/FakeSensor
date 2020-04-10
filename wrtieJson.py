@@ -68,9 +68,10 @@ try:
             'x3':value3, # sommer timme
             'x4':value3, # 
             }
-            with open('settings.json','w') as json_file:
-                json.dump(settings,json_file)
-                sleep(1)
+        with open('settings.json','w') as json_file:
+            json.dump(settings,json_file)
+            sleep(1)
+
 except KeyboardInterrupt:
     GPIO.cleanup()
     print("Interrupted!")
