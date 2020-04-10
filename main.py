@@ -76,6 +76,7 @@ class pt1000 :
             x1 = data['x1']
             x2 = data['x2']
             x3 = data['x3']
+            x4 = data['x4']
         return(setpoint1,setpoint2,deltaT,x1,x2,x3,x4)
 # PT100 1 definition , DI 5 wires 2  
 T1_1 = pt1000(5,4)
