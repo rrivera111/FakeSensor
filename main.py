@@ -7,6 +7,7 @@ import random, threading, json
 from statistics import mean
 from datetime import datetime
 from datetime import date
+import RPi.GPIO as GPIO
 #from datetime import time
 from datetime import timedelta
 # MQTT client
@@ -93,7 +94,7 @@ def publish_To_Topic(topic, message):
 	mqttc.publish(topic,message)
 # Gathers sensor data and publush to defined topics 
 def publish_Sensor_Values_to_MQTT(): 
-	threading.Timer(3.0, publish_Sensor_Values_to_MQTT).start()
+	#threading.Timer(3.0, publish_Sensor_Values_to_MQTT).start()
 	global toggle
 	if toggle == 0:
 		valueSensor1 = str(sensor1)      

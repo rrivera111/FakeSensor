@@ -50,9 +50,9 @@ try:
         switch1Vritual = items.get('channel4') 
         switch1Vritual = switch1Vritual.state
         #global switch1Vritual
-        # value1 = inputs(13)
-        # value2 = inputs(26)
-        # value3 = inputVirtual(switch1Vritual)
+        value1 = inputs(13)
+        value2 = inputs(26)
+        value3 = inputVirtual(switch1Vritual)
         # #settings = {} 
         # #settings['deltaT'] = 10
         # #settings['x1'] = value1
