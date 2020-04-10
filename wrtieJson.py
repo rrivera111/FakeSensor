@@ -42,34 +42,33 @@ def inputVirtual(virtualSwitch):
         val = 0
     return val 
 
-try: 
+
 while True : 
         base_url =  'http://localhost:8080/rest'
         openhab = openHAB(base_url)
         items=openhab.fetch_all_items()
         switch1Vritual = items.get('channel4') 
         switch1Vritual = switch1Vritual.state
-    try:
-
-        #global switch1Vritual
-        value1 = inputs(13)
-        value2 = inputs(26)
-        value3 = inputVirtual(switch1Vritual)
-        # #settings = {} 
-        # #settings['deltaT'] = 10
-        # #settings['x1'] = value1
-        # #settings['x2'] = value1
-        # #settings['x3'] = value3
-        # #settings = json.dumps(settings)
-        settings = {
-            'setpoint1': 21,
-            'setpoint2':31,
-            'deltaT':10,
-            'x1':value1, # heating on
-            'x2':value2, # warm water
-            'x3':value3, # sommer timme
-            'x4':value3, # 
-            }
+        try:
+            #global switch1Vritual
+            value1 = inputs(13)
+            value2 = inputs(26)
+            value3 = inputVirtual(switch1Vritual)
+            # #settings = {} 
+            # # #settings['deltaT'] = 10
+            # # #settings['x1'] = value1
+            # # #settings['x2'] = value1
+            # # #settings['x3'] = value3
+            # # #settings = json.dumps(settings)
+            settings = {
+                'setpoint1': 21,
+                'setpoint2':31,
+                'deltaT':10,
+                'x1':value1, # heating on
+                'x2':value2, # warm water
+                'x3':value3, # sommer timme
+                'x4':value3, # 
+                }
         sleep(1)
     
      except KeyboardInterrupt:
