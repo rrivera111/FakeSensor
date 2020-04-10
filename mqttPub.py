@@ -27,7 +27,7 @@ def publish_To_Topic(topic, message):
 
 # Gathers sensor data and publush to defined topics 
 def publish_Fake_Sensor_Values_to_MQTT(): 
-	threading.Timer(3.0, publish_Fake_Sensor_Values_to_MQTT).start()
+	#threading.Timer(3.0, publish_Fake_Sensor_Values_to_MQTT).start()
 	global toggle
 	if toggle == 0:
 		valueSensor1 = float("{0:.2f}".format(sensor1))
@@ -43,7 +43,9 @@ def publish_Fake_Sensor_Values_to_MQTT():
 		publish_To_Topic (MQTT_Topic_Heater, valueSensor2)
 		toggle = 0
 
+while True : 
+	publish_Fake_Sensor_Values_to_MQTT()
+	time.sleep(.5)
 
-publish_Fake_Sensor_Values_to_MQTT()
 
 
