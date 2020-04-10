@@ -49,6 +49,7 @@ while True :
         items=openhab.fetch_all_items()
         switch1Vritual = items.get('channel4') 
         switch1Vritual = switch1Vritual.state
+        sleep(1)
         try:
             #global switch1Vritual
             value1 = inputs(13)
@@ -69,11 +70,9 @@ while True :
                 'x3':value3, # sommer timme
                 'x4':value3, # 
                 }
-        sleep(1)
-    
-     except KeyboardInterrupt:
-         GPIO.cleanup()
-         print("Interrupted!")
-    with open('settings.json','w') as json_file:
-        json.dump(settings,json_file)
-        sleep(1)
+        except KeyboardInterrupt:
+            GPIO.cleanup()
+            print("Interrupted!")
+        with open('settings.json','w') as json_file:
+            json.dump(settings,json_file)
+            sleep(0.3)
